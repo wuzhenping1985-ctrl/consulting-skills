@@ -1,0 +1,4 @@
+interface:
+  display_name: "Management Consulting Methods"
+  short_description: "Apply core consulting frameworks well."
+  default_prompt: "Use consulting methods to structure this ambiguous business problem, create an issue tree, choose frameworks, and define workstreams."

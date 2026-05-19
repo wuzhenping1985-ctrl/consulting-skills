@@ -1,0 +1,4 @@
+interface:
+  display_name: "Strategy Analysis"
+  short_description: "Analyze strategy choices and growth paths."
+  default_prompt: "Analyze this business situation and recommend strategy choices, growth paths, tradeoffs, and execution priorities."

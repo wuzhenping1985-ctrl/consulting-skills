@@ -1,0 +1,4 @@
+interface:
+  display_name: "Financial Diagnosis"
+  short_description: "Diagnose financial drivers and actions."
+  default_prompt: "Diagnose this company financial data and produce consulting-grade findings, root causes, and management actions."

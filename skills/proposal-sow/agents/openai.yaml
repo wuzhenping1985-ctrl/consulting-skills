@@ -1,0 +1,4 @@
+interface:
+  display_name: "Proposal SOW"
+  short_description: "Draft consulting proposals and SOWs."
+  default_prompt: "Draft a consulting proposal or SOW with client context, workstreams, methods, deliverables, timeline, team, and assumptions."

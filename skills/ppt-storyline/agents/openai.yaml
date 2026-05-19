@@ -1,0 +1,4 @@
+interface:
+  display_name: "PPT Storyline"
+  short_description: "Build consulting deck storylines."
+  default_prompt: "Turn this material into a consulting-style PPT storyline with executive summary, slide-by-slide messages, and evidence needs."

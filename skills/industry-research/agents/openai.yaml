@@ -1,0 +1,4 @@
+interface:
+  display_name: "Industry Research"
+  short_description: "Structure industry and market analysis."
+  default_prompt: "Create an industry research analysis with market structure, value chain, competition, trends, risks, and strategic implications."
