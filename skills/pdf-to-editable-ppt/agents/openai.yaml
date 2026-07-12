@@ -1,0 +1,4 @@
+interface:
+  display_name: "PDF to Editable PPT"
+  short_description: "Rebuild PPT-like PDFs as editable decks; also carries Codex PPT image-deck helpers."
+  default_prompt: "Use $pdf-to-editable-ppt to convert this PPT-style PDF into a fully editable 16:9 PowerPoint deck built on the bundled CIIC consulting template and matching the source layout. Rebuild content pages by default; add cover, catalog, divider, or back-cover pages only when they exist in the source or I explicitly ask for them. Do not use full-page screenshots or rasterized PDF pages as final slide content. Use the merged Codex PPT image workflow only if I explicitly ask for full-slide image-based slides, and never let that image workflow replace the template-based final deliverable for normal conversion requests."

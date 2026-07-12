@@ -1,0 +1,4 @@
+interface:
+  display_name: "企业经营诊断"
+  short_description: "分析企业经营成效、经营安全与业务经营，并生成Word诊断报告。"
+  default_prompt: "请使用企业经营诊断 skill，基于我提供的财务数据、业务背景和公开资料，分析企业经营成效、经营安全与关键业务驱动因素，并输出一份Word报告。"

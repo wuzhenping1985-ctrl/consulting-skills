@@ -1,0 +1,4 @@
+interface:
+  display_name: "Report to Consulting PPT"
+  short_description: "Route text reports through Codex PPT, PDF export, then editable PPT reconstruction."
+  default_prompt: "Use $report-to-consulting-ppt for text-heavy Word/PDF reports: first synthesize an image-based deck with Codex PPT, then export that image deck to PDF, then use $pdf-to-editable-ppt to reconstruct the final editable consulting PowerPoint. If the input is already a PPT-like PDF requiring one-to-one conversion, use $pdf-to-editable-ppt directly. In both routes, the final user-facing PPTX must use the CIIC consulting template; do not deliver a blank-deck image assembly as the only final PPT unless explicitly requested as an image-only companion."

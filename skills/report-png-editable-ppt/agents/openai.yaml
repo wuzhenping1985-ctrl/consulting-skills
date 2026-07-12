@@ -1,0 +1,4 @@
+interface:
+  display_name: "Report PNG Editable PPT"
+  short_description: "Report to editable PPT workflow"
+  default_prompt: "Use $report-png-editable-ppt to convert this text report into an editable PowerPoint with approval gates."
