@@ -31,6 +31,7 @@ Use this structure unless the user asks otherwise:
 
 - Read `references/strategy-frameworks.md` to select frameworks and avoid superficial use.
 - Read `references/option-evaluation.md` when comparing strategic options or building recommendation logic.
+- For a company case study or performance decline, read `references/case-causality.md` before drafting. Diagnose the mechanism first; strategic options and recommendations apply only when requested.
 
 ## Guardrails
 

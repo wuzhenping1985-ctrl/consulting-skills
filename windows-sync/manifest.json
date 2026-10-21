@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "2026-10-21T15:58:48+08:00",
+  "sourcePlatform": "macOS",
+  "repository": "wuzhenping1985-ctrl/consulting-skills",
+  "skills": [
+    {
+      "name": "agent-reach",
+      "entryFile": "SKILL.md",
+      "fileCount": 8,
+      "bytes": 29147,
+      "treeSha256": "a1fde5a06926650976cdec73c27c30b170add2c6d3c0a7eb4385d60b0546bf04"
+    },
+    {
+      "name": "ciic-style-ppt",
+      "entryFile": "SKILL.md",
+      "fileCount": 5,
+      "bytes": 1113281,
+      "treeSha256": "e15ddf43923e7f402366b2ec786c27bf7229a34e895ead133229ad8b43d9258c"
+    },
+    {
+      "name": "financial-diagnosis",
+      "entryFile": "SKILL.md",
+      "fileCount": 4,
+      "bytes": 9124,
+      "treeSha256": "9eca1b363626e66d926cc2f0c1eefd41f4ff0e7e3cf44a0ebe097195742363f4"
+    },
+    {
+      "name": "gongwen-docx",
+      "entryFile": "SKILL.md",
+      "fileCount": 4,
+      "bytes": 42152,
+      "treeSha256": "2d4731771da16a034a72d60b211712c98e46571c0f15976e5333db74f4b96409"
+    },
+    {
+      "name": "humanizer-zh",
+      "entryFile": "SKILL.md",
+      "fileCount": 9,
+      "bytes": 40289,
+      "treeSha256": "58c300cca138843dfca21503621bcef2b7f17ab1f376cf9620eb570baddc1b3f"
+    },
+    {
+      "name": "industry-research",
+      "entryFile": "SKILL.md",
+      "fileCount": 4,
+      "bytes": 5020,
+      "treeSha256": "59cec6e79f075dbc5c7f688fe19f0a8c1a6239acecb6f7544f3db9b31bbc7171"
+    },
+    {
+      "name": "management-consulting-methods",
+      "entryFile": "SKILL.md",
+      "fileCount": 4,
+      "bytes": 4781,
+      "treeSha256": "b371173ce3116e048385f52f5c779d6c646a0414ec3fff71f7ea5f9c8446633d"
+    },
+    {
+      "name": "mck-ppt-design",
+      "entryFile": "SKILL.md",
+      "fileCount": 59,
+      "bytes": 632816,
+      "treeSha256": "2322aaa0bb6d49e9efd7270dd4708b0af2f8387e85cd705ed1ec14f0dfe2cace"
+    },
+    {
+      "name": "original-pic-ppt",
+      "entryFile": "SKILL.md",
+      "fileCount": 238,
+      "bytes": 126904361,
+      "treeSha256": "06b4c44b9189fabc73484fac925fe12071deb1f2aa8f898cec8ac38d1805d660"
+    },
+    {
+      "name": "ppt-layout-library",
+      "entryFile": "README.md",
+      "fileCount": 98,
+      "bytes": 70104475,
+      "treeSha256": "e15096aeaccec31f4c2f1b56e0a009ee0711c46d36d4419e819a00b6a54bc79a"
+    },
+    {
+      "name": "ppt-storyline",
+      "entryFile": "SKILL.md",
+      "fileCount": 4,
+      "bytes": 10874,
+      "treeSha256": "95fe94bac3addc9bb5404cbf1dbf93abcca11d9ab152fce09803ee6fc5b63421"
+    },
+    {
+      "name": "proposal-sow",
+      "entryFile": "SKILL.md",
+      "fileCount": 4,
+      "bytes": 3737,
+      "treeSha256": "d0af4377af3eb1768bdab95ed39597895d47288e6bc3559386d28db41b93d894"
+    },
+    {
+      "name": "slide-editable-deck-orchestrator",
+      "entryFile": "SKILL.md",
+      "fileCount": 17,
+      "bytes": 55889,
+      "treeSha256": "ea15ab404c751851493077108a44da1373c27340ffe6b042ade34f10110e48f2"
+    },
+    {
+      "name": "slide-image-dual-render",
+      "entryFile": "SKILL.md",
+      "fileCount": 35,
+      "bytes": 321141,
+      "treeSha256": "967a33faaf03e510d2be041304c41140ebf0d4d37f5fa90ec3c229703768eb36"
+    },
+    {
+      "name": "slide-maker",
+      "entryFile": "SKILL.md",
+      "fileCount": 61,
+      "bytes": 1524096,
+      "treeSha256": "4211f0033c6ca471ad0f5e21a857dc14e32cd81a36301258df7d020f94a1e62b"
+    },
+    {
+      "name": "slide-text-layer-inpaint",
+      "entryFile": "SKILL.md",
+      "fileCount": 12,
+      "bytes": 117915,
+      "treeSha256": "f3684acf8d6c2d6e3566b2a49a3c041f84adaf1f0c2f95aefb14cf872148439c"
+    },
+    {
+      "name": "slide-visual-polish-qa",
+      "entryFile": "SKILL.md",
+      "fileCount": 17,
+      "bytes": 187329,
+      "treeSha256": "68326052415e62f52668b1298d7d7489417942dbb4975a31fe8541e4c30e211f"
+    },
+    {
+      "name": "strategy-analysis",
+      "entryFile": "SKILL.md",
+      "fileCount": 5,
+      "bytes": 8976,
+      "treeSha256": "16884ea4976edf0536fde49086890952c035195b826ccc22fd9a5085371866e6"
+    }
+  ],
+  "sharedFiles": [
+    "ppt-art-direction.md",
+    "ppt-content-rules.md"
+  ],
+  "globalRulesTemplate": "global-rules/AGENTS.template.md",
+  "plugins": [
+    {
+      "pluginId": "app-6944c9ea44b081919da6f28d284380ce@openai-curated-remote",
+      "name": "app-6944c9ea44b081919da6f28d284380ce",
+      "marketplaceName": "openai-curated-remote",
+      "version": "2.0.0",
+      "authPolicy": "ON_INSTALL",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "remote"
+    },
+    {
+      "pluginId": "browser@openai-bundled",
+      "name": "browser",
+      "marketplaceName": "openai-bundled",
+      "version": "26.1016.51333",
+      "authPolicy": "ON_INSTALL",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "local"
+    },
+    {
+      "pluginId": "chrome@openai-bundled",
+      "name": "chrome",
+      "marketplaceName": "openai-bundled",
+      "version": "26.1016.51333",
+      "authPolicy": "ON_INSTALL",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "local"
+    },
+    {
+      "pluginId": "code-review@openai-bundled",
+      "name": "code-review",
+      "marketplaceName": "openai-bundled",
+      "version": "26.1016.51333",
+      "authPolicy": "ON_INSTALL",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "local"
+    },
+    {
+      "pluginId": "codex-app-tools@openai-bundled",
+      "name": "codex-app-tools",
+      "marketplaceName": "openai-bundled",
+      "version": "0.1.6",
+      "authPolicy": "ON_INSTALL",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "local"
+    },
+    {
+      "pluginId": "computer-use@openai-bundled",
+      "name": "computer-use",
+      "marketplaceName": "openai-bundled",
+      "version": "1.0.1001540",
+      "authPolicy": "ON_INSTALL",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "local"
+    },
+    {
+      "pluginId": "documents@openai-primary-runtime",
+      "name": "documents",
+      "marketplaceName": "openai-primary-runtime",
+      "version": "26.1020.11348",
+      "authPolicy": "ON_USE",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "local"
+    },
+    {
+      "pluginId": "fitness-ledger@openai-curated-remote",
+      "name": "fitness-ledger",
+      "marketplaceName": "openai-curated-remote",
+      "version": "1.0.1",
+      "authPolicy": "ON_INSTALL",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "remote"
+    },
+    {
+      "pluginId": "github@openai-curated-remote",
+      "name": "github",
+      "marketplaceName": "openai-curated-remote",
+      "version": "0.1.12-5f7cd798dc99",
+      "authPolicy": "ON_INSTALL",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "remote"
+    },
+    {
+      "pluginId": "gmail@openai-curated-remote",
+      "name": "gmail",
+      "marketplaceName": "openai-curated-remote",
+      "version": "0.1.10",
+      "authPolicy": "ON_INSTALL",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "remote"
+    },
+    {
+      "pluginId": "google-calendar@openai-curated-remote",
+      "name": "google-calendar",
+      "marketplaceName": "openai-curated-remote",
+      "version": "1.2.7",
+      "authPolicy": "ON_INSTALL",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "remote"
+    },
+    {
+      "pluginId": "google-drive@openai-curated-remote",
+      "name": "google-drive",
+      "marketplaceName": "openai-curated-remote",
+      "version": "0.1.22",
+      "authPolicy": "ON_INSTALL",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "remote"
+    },
+    {
+      "pluginId": "notion@openai-curated-remote",
+      "name": "notion",
+      "marketplaceName": "openai-curated-remote",
+      "version": "3.0.1",
+      "authPolicy": "ON_INSTALL",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "remote"
+    },
+    {
+      "pluginId": "openai-templates@openai-curated-remote",
+      "name": "openai-templates",
+      "marketplaceName": "openai-curated-remote",
+      "version": "0.1.1",
+      "authPolicy": "ON_USE",
+      "installPolicy": "INSTALLED_BY_DEFAULT",
+      "sourceKind": "remote"
+    },
+    {
+      "pluginId": "pages@openai-curated-remote",
+      "name": "pages",
+      "marketplaceName": "openai-curated-remote",
+      "version": "0.1.23",
+      "authPolicy": "ON_USE",
+      "installPolicy": "INSTALLED_BY_DEFAULT",
+      "sourceKind": "remote"
+    },
+    {
+      "pluginId": "pdf@openai-primary-runtime",
+      "name": "pdf",
+      "marketplaceName": "openai-primary-runtime",
+      "version": "26.1020.11348",
+      "authPolicy": "ON_USE",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "local"
+    },
+    {
+      "pluginId": "plugin-management@openai-curated-remote",
+      "name": "plugin-management",
+      "marketplaceName": "openai-curated-remote",
+      "version": "0.1.0",
+      "authPolicy": "ON_USE",
+      "installPolicy": "INSTALLED_BY_DEFAULT",
+      "sourceKind": "remote"
+    },
+    {
+      "pluginId": "presentations@openai-primary-runtime",
+      "name": "presentations",
+      "marketplaceName": "openai-primary-runtime",
+      "version": "26.1020.11348",
+      "authPolicy": "ON_USE",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "local"
+    },
+    {
+      "pluginId": "sites@openai-curated-remote",
+      "name": "sites",
+      "marketplaceName": "openai-curated-remote",
+      "version": "1.1.0",
+      "authPolicy": "ON_USE",
+      "installPolicy": "INSTALLED_BY_DEFAULT",
+      "sourceKind": "remote"
+    },
+    {
+      "pluginId": "spreadsheets@openai-primary-runtime",
+      "name": "spreadsheets",
+      "marketplaceName": "openai-primary-runtime",
+      "version": "26.1020.11348",
+      "authPolicy": "ON_USE",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "local"
+    },
+    {
+      "pluginId": "template-creator@openai-primary-runtime",
+      "name": "template-creator",
+      "marketplaceName": "openai-primary-runtime",
+      "version": "26.1020.11348",
+      "authPolicy": "ON_USE",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "local"
+    },
+    {
+      "pluginId": "unified-computer-use@openai-bundled",
+      "name": "unified-computer-use",
+      "marketplaceName": "openai-bundled",
+      "version": "26.1016.51333",
+      "authPolicy": "ON_INSTALL",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "local"
+    },
+    {
+      "pluginId": "visualize@openai-bundled",
+      "name": "visualize",
+      "marketplaceName": "openai-bundled",
+      "version": "1.0.55",
+      "authPolicy": "ON_INSTALL",
+      "installPolicy": "AVAILABLE",
+      "sourceKind": "local"
+    },
+    {
+      "pluginId": "work-pets@openai-curated-remote",
+      "name": "work-pets",
+      "marketplaceName": "openai-curated-remote",
+      "version": "0.1.6",
+      "authPolicy": "ON_USE",
+      "installPolicy": "INSTALLED_BY_DEFAULT",
+      "sourceKind": "remote"
+    }
+  ],
+  "excluded": [
+    "~/.codex/auth.json and all account tokens",
+    "~/.codex/plugins/cache and platform runtime caches",
+    "chat history, generated images, logs, and task state",
+    "macOS project trust paths, notification commands, MCP executable paths, and shell environment paths",
+    "node_modules, Python virtual environments, __pycache__, and compiled bytecode"
+  ]
+}

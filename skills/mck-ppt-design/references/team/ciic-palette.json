@@ -1,0 +1,25 @@
+{
+  "font": "Microsoft YaHei",
+  "primary": "0042FF",
+  "white": "FFFFFF",
+  "text": "383838",
+  "background": "E6E6E6",
+  "orange": "FF4200",
+  "accents": [
+    "1C55FE",
+    "547FFE",
+    "8DAAFE",
+    "C6D4FE",
+    "B3D4FE",
+    "DCDCDC"
+  ],
+  "tints": [
+    "386AFE",
+    "7194FE",
+    "A9BFFE",
+    "E2E9FE"
+  ],
+  "source": "references/team/ciic-color-reference.png",
+  "interpretation": "明确标注 RGB 优先于图像像素。主蓝、辅助色4/5/6采用标注；辅助色1/2/3及橙色采用平坦色块取样。tints取自底部蓝色阶梯。",
+  "contrast_minimum": 4.5
+}

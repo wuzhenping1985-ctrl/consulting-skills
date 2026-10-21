@@ -2,6 +2,8 @@
 
 Read this before full-deck image generation, preparing slide jobs, dispatching subagents, recording results, or handling blockers.
 
+For every Word/PDF/text report deck, also read `source-fidelity-and-structure-conservation.md` before creating `deck_spec.json` or prompt jobs.
+
 ## Final Slide Image Generation
 
 Generate one image per slide with the selected image backend. Every final `slide_XX.png` must be produced by the built-in image tool or by `scripts/image_gen.py`; programmatic rendering or hybrid text overlay is not acceptable for slide image creation.
@@ -10,13 +12,16 @@ After the outline, visual style, image backend, and sample slide have all been a
 
 - `deck_spec.json`
 - `prompts/slide_XX.json`
-- `speech.md`
+
+Every `deck_spec.json` and generated prompt job must carry the global typography policy: Microsoft YaHei (微软雅黑) is the only font family for all generated Chinese, Latin, numeric, punctuation, title, body, label, annotation, caption, citation, chart, and table text. Regular and bold weights may vary within the same family. This policy overrides selected styles, reusable style briefs, approved sample-slide typography, and visual references. Text already baked into a strict supplied image remains unchanged.
+
+Do not create `speech.md` during the default workflow. Create it only after an explicit request for speaker notes, presentation notes, narration, a speech script, or PPT remarks.
 
 Do not create these final downstream artifacts before outline approval. If the user explicitly asks for pre-approval planning files, use `.draft.` filenames and synchronize them after approval.
 
 `deck_spec.json` must include `sample_generation_method` copied from the approved sample before `prepare_slide_prompts.py` is run. The helper copies that method into each `prompts/slide_XX.json` and into `slide_jobs.json`, so workers can see the exact backend, tool, mode, image context preparation, and output constraints used for the approved sample.
 
-When the source is a Word/PDF/text report, `deck_spec.json` must also carry source-grounding context. Use deck-level `source_grounding` for global rules and slide-level `source_basis` / `source_evidence` / `local_context` for exact support. The source grounding is a boundary, not just background: workers may summarize and structure it, but must not add unsupported claims.
+When the source is a Word/PDF/text report, `deck_spec.json` must also carry source-grounding context. Use deck-level `source_grounding` for global rules and slide-level `source_basis` / `source_evidence` / `local_context` for exact support. Include the complete deck-level `source_structure_ledger` and slide-level `source_item_mapping` defined in `source-fidelity-and-structure-conservation.md`. Workers must retain viewpoints and all supporting items, using natural explanations that preserve each level's count, parent-child relations, order, numerical meaning, and required terms. They may remove genuinely repeated wording, but may not delete supporting items for space.
 
 If the confirmed style is `中智蓝色咨询模板风`, treat it as a color-only style by default. `deck_spec.json` should normally keep `render_slide_number: false` and should not include template-style footer, page-marker, logo, city motif, original framework-template color scheme, or assembly-template rules unless the user explicitly asks to reproduce the original template layout. When a slide uses a business-blue framework module, include a slide-level `color_mapping` rule that remaps all template colors to the confirmed deck palette.
 
@@ -44,14 +49,18 @@ The helper writes:
 
 Each `prompts/slide_XX.json` is a self-contained slide job. It includes the slide number, title, output filename, input image list, whether context images are required, and the full prompt text. Use these JSON job files for built-in image generation, CLI/API fallback coordination, and subagent handoff. Do not create a separate job manifest unless the user explicitly asks for one.
 
+For report-grounded decks, the helper validates structure conservation before writing any prompt job. It rejects a missing `source_structure_ledger`, a count mismatch, an incomplete or duplicate `source_item_mapping`, unrecorded label compression, a missing required term, a changed parent, a changed order, multiple mapped items sharing one visual module id, mixed sequence-marker modes, duplicate external markers, embedded sequence wording combined with an external marker, and external-marker text that still contains sequence wording.
+
 The parent agent is responsible for packaging context before dispatch. A slide subagent only sees its assigned single-slide job, the images explicitly passed to it, and the handoff text. Do not assume the subagent knows the source article, full outline, previous slides, later slides, or any concept held only in the parent agent's conversation context.
 
 For any slide that depends on cross-slide or source-wide meaning, write the necessary background directly into `deck_spec.json` before preparing prompts:
 
 - Use deck-level `deck_context` for canonical concepts that multiple slides may need, such as the source summary, core claim, term list, taxonomy, characters, definitions, chronology, or required naming.
 - Use deck-level `source_grounding` when the deck is based on a Word/PDF/text report. Include the source type, extraction notes, allowed transformations, and the rule that all visible claims must stay traceable to the report.
+- Use deck-level `source_structure_ledger` to record every countable source group at any level, core viewpoint, exact source count, exact parent label, stable item ids, source labels, core meanings, required terms, source order, and inclusion status.
 - Use slide-level `local_context` for page-specific facts that must be visible to that one worker, such as "summarize these six traits", "compare these two methods", "continue this three-step framework", or "use this exact quote".
 - Use slide-level `source_basis` and `source_evidence` to identify the report section, paragraph, table, figure, or supplied asset supporting the slide. Include exact wording or concise source excerpts when the slide contains numbers, policy names, quotations, or precise classifications.
+- Use slide-level `source_item_mapping` to assign each included ledger item to exactly one distinct visible content module. Record the source parent, concise visible label and message, label mode, compression note when applicable, source order, `sequence_marker_mode`, `external_sequence_marker`, and `sequence_edit_note`.
 - Expand references like "the six traits", "the above framework", "the previous conclusion", or "these examples" into explicit lists or definitions inside `deck_context` or `local_context`. Avoid leaving them as implicit pointers.
 
 The goal is not to make subagents validate missing context. The goal is for the parent agent to hand each worker a complete enough task packet so the worker can simply execute the assigned page.
@@ -62,7 +71,9 @@ The goal is not to make subagents validate missing context. The goal is for the 
 
 Use a structured visual brief for each slide. Image generation works best when the prompt separates canvas, style, layout, text, visual elements, and constraints instead of relying only on a long style paragraph.
 
-For consulting/report decks, structure the body content as logic demonstration, not decoration. Prefer labelled boxes, hierarchy frames, process lanes, comparison columns, matrices, causal chains, responsibility-boundary frames, evidence-to-insight funnels, and compact in-body conclusion callouts. Keep icons rare and functional; do not make icon rows or icon-only card sets the main visual unless the user explicitly asks for an icon-led page. Normal management consulting content pages should be medium-high density: fill most of the usable body area with readable text units, labelled cells, tables, matrices, or callouts, and avoid broad empty whitespace around a small amount of content. The top slide title/headline is the page storyline; do not add a separate visible storyline/core-viewpoint row.
+For consulting/report decks, structure the body content as logic demonstration, not decoration. Prefer labelled boxes, hierarchy frames, process lanes, comparison columns, matrices, causal chains, responsibility-boundary frames, evidence-to-insight funnels, and compact in-body conclusion callouts. Keep icons rare and functional; do not make icon rows or icon-only card sets the main visual unless the user explicitly asks for an icon-led page. Let complete source content determine density; arrange readable explanations within its original hierarchy without adding, merging, splitting, or omitting points to fill space. The top slide title/headline is the page storyline; do not add a separate visible storyline/core-viewpoint row.
+
+Treat text-rich as complete, natural explanations within the original source hierarchy. Preserve each level's peer count, order, and parent-child relationships; do not turn supporting details into new branches. Do not cut objects, actions, relations, or conditions to fit a text limit. Adapt the layout or use a clearly linked continuation when the complete meaning needs more room.
 
 Keep the deck visually coherent but vary slide layouts according to page semantics. Treat style references and `layout_blueprints` as candidate patterns, not fixed templates. Across a normal deck, deliberately mix suitable page types such as:
 
@@ -89,7 +100,12 @@ Avoid generating every slide as the same three-card layout. For each slide, choo
     "name": "{confirmed style name}",
     "visual_direction": "{same final style description for every slide}",
     "color_palette": "{main colors and accent colors}",
-    "typography": "{font personality, hierarchy, weight, text alignment}",
+    "typography": {
+      "font_family": "Microsoft YaHei (微软雅黑) only",
+      "scope": "all generated Chinese, Latin, numeric, punctuation, title, body, label, annotation, caption, citation, chart, and table text",
+      "allowed_variants": "regular and bold weights within Microsoft YaHei",
+      "style_expression": "vary size, weight, color, alignment, spacing, and hierarchy without changing font family"
+    },
     "texture_and_finish": "{flat, paper, dashboard, editorial, whiteboard, etc.}",
     "deck_consistency": "same palette, typography, restrained functional marker language, texture, and mood across all slides"
   },
@@ -102,9 +118,27 @@ Avoid generating every slide as the same three-card layout. For each slide, choo
     "source_type": "{Word report, PDF report, text report, article, outline, etc.}",
     "source_scope": "{what source document(s) are authoritative for deck content}",
     "grounding_rule": "all slide claims, title/headline, labels, recommendations, numbers, and comparisons must be traceable to the source report unless user explicitly requests external enrichment",
-    "allowed_transformations": ["summarize", "group", "deduplicate", "reorder", "convert prose into consulting logic diagrams"],
-    "forbidden_transformations": ["invent facts", "add external cases", "add unsupported recommendations", "change numeric meaning"]
+    "allowed_transformations": ["faithfully paraphrase one existing source item", "remove genuinely repeated wording without deleting any source item", "display supporting evidence under its original parent and in its original order", "convert the preserved source hierarchy into a matching consulting logic diagram"],
+    "forbidden_transformations": ["invent facts", "add external cases", "add unsupported recommendations", "change numeric meaning", "change causal direction", "change scope or polarity", "add source items", "merge source items", "split source items", "omit source items", "duplicate source items", "reparent source items", "reorder source items"]
   },
+  "source_structure_scan_note": "Core viewpoints and supporting details were classified; all countable groups at every source level were scanned.",
+  "presentation_text_limits": {},
+  "source_structure_ledger": [
+    {
+      "group_id": "G-01",
+      "parent_label": "某论点",
+      "core_viewpoint": "某论点由四个核心要素构成",
+      "source_basis": "第2章第3节第2段",
+      "source_count": 4,
+      "deck_status": "included",
+      "ordered_items": [
+        {"item_id": "G-01-01", "label": "要素一的原文表述", "core_meaning": "要素一的核心含义", "required_terms": ["关键术语A"], "order": 1},
+        {"item_id": "G-01-02", "label": "要素二的原文表述", "core_meaning": "要素二的核心含义", "required_terms": [], "order": 2},
+        {"item_id": "G-01-03", "label": "要素三的原文表述", "core_meaning": "要素三的核心含义", "required_terms": [], "order": 3},
+        {"item_id": "G-01-04", "label": "要素四的原文表述", "core_meaning": "要素四的核心含义", "required_terms": [], "order": 4}
+      ]
+    }
+  ],
   "layout": {
     "role": "{cover, agenda, section divider, concept, process, comparison, timeline, data evidence, architecture, case study, summary, Q&A, etc.}",
     "intent": "{why this page uses this layout: cover, comparison, timeline, data evidence, workflow, summary, etc.}",
@@ -125,15 +159,25 @@ Avoid generating every slide as the same three-card layout. For each slide, choo
     "source_basis": "{report chapter/section/page/paragraph/table/figure supporting this slide}",
     "source_evidence": ["{concise source excerpt or faithful paraphrase 1}", "{concise source excerpt or faithful paraphrase 2}"]
   },
+  "source_item_mapping": [
+    {"group_id": "G-01", "item_id": "G-01-01", "visible_parent_label": "某论点", "visible_label": "要素一", "visible_message": "一句话表达要素一的核心含义并保留关键术语A", "sequence_marker_mode": "embedded_text", "external_sequence_marker": "", "sequence_edit_note": "", "label_mode": "faithful_compression", "compression_note": "缩短原文标签并保留核心含义", "visible_order": 1, "visual_module_id": "module-1"},
+    {"group_id": "G-01", "item_id": "G-01-02", "visible_parent_label": "某论点", "visible_label": "要素二", "visible_message": "一句话表达要素二的核心含义", "sequence_marker_mode": "embedded_text", "external_sequence_marker": "", "sequence_edit_note": "", "label_mode": "faithful_compression", "compression_note": "缩短原文标签并保留核心含义", "visible_order": 2, "visual_module_id": "module-2"},
+    {"group_id": "G-01", "item_id": "G-01-03", "visible_parent_label": "某论点", "visible_label": "要素三", "visible_message": "一句话表达要素三的核心含义", "sequence_marker_mode": "embedded_text", "external_sequence_marker": "", "sequence_edit_note": "", "label_mode": "faithful_compression", "compression_note": "缩短原文标签并保留核心含义", "visible_order": 3, "visual_module_id": "module-3"},
+    {"group_id": "G-01", "item_id": "G-01-04", "visible_parent_label": "某论点", "visible_label": "要素四", "visible_message": "一句话表达要素四的核心含义", "sequence_marker_mode": "embedded_text", "external_sequence_marker": "", "sequence_edit_note": "", "label_mode": "faithful_compression", "compression_note": "缩短原文标签并保留核心含义", "visible_order": 4, "visual_module_id": "module-4"}
+  ],
   "visual_elements": {
     "main_visual": "{logic diagram, labelled box framework, matrix, process flow, comparison frame, chart, or other content-specific visual idea}",
     "supporting_elements": "{arrows, labels, callouts, emphasis blocks, and at most a few functional icons when needed}"
   },
   "constraints": [
-    "The final image itself must contain the title and key points.",
+    "The final image itself must contain the title and approved key content. When a Source Fidelity Contract is present, its visible_label and visible_message fields supersede alternative key_points wording for mapped items.",
+    "Use Microsoft YaHei (微软雅黑) as the only font family for every generated text element. This overrides all style and reference typography. Preserve text already baked into a strict supplied image.",
     "All text must be readable and correctly spelled.",
     "If based on a Word/PDF/text report, do not add facts, cases, data, recommendations, risks, or conclusions that are not supported by the source basis.",
-    "If based on a Word/PDF/text report, use original report wording for visible labels and key points wherever feasible; do not replace source terms with self-created consulting slogans or disconnected summary claims.",
+    "If based on a Word/PDF/text report, use concise faithful presentation wording; preserve core meaning, required terms, numerical meaning, causal direction, conditions, scope, polarity, and conclusions.",
+    "If based on a Word/PDF/text report, render exactly one distinct visible content module for every mapped source item; preserve the exact mapped count, parent, and order, with no added, merged, split, omitted, duplicated, semantically altered, reparented, or reordered source item.",
+    "Use exactly one sequence signal per mapped item. Embedded sequence wording forbids a separate marker; an external marker requires removal of sequence wording; visible_order is internal metadata and must not be rendered.",
+    "Use natural labels and complete explanations; preserve all source-level counts, order, and parent-child relations, and adapt the layout rather than cutting necessary relationships or conditions.",
     "Keep the confirmed style consistent with the rest of the deck.",
     "If using a framework template module, use it as structure only and recolor all template fills, strokes, labels, backgrounds, and emphasis marks to the confirmed deck palette.",
     "For consulting/report slides, prioritize readable text and logic boxes over decorative icons.",
@@ -155,12 +199,15 @@ Use the slide state scripts as the dispatch contract: the main agent spawns work
 
 Parent agent responsibilities:
 
-- Own `outline.md`, `deck_spec.json`, `prompts/`, `origin_image/`, QA, `speech.md`, and final PPT assembly.
+- Own `outline.md`, `deck_spec.json`, `prompts/`, `origin_image/`, QA, and final PPT assembly. Own `speech.md` only when speaker notes were explicitly requested.
 - Run `prepare_slide_prompts.py` or otherwise write full per-slide JSON jobs and `slide_jobs.json` before delegation.
 - Run `slide_job_status.py` to see dispatch slots and pending slide ids before each batch.
 - Ensure the approved sample slide is included in every non-sample job as a style-only input image when available.
 - Ensure every dispatched slide job is self-contained. If a slide summarizes, compares, continues, or refers to deck-wide concepts, put the required concepts into `deck_context` or the slide's `local_context` before running `prepare_slide_prompts.py`.
 - For Word/PDF/text report decks, ensure every dispatched slide job includes enough source basis/evidence for the worker to stay grounded. Do not ask workers to infer missing report content from the slide title alone.
+- For Word/PDF/text report decks, ensure every dispatched slide job includes `source_fidelity_contract` generated from the validated ledger and mapping. Count the expected visible modules and review the core meanings, required terms, and concise messages before dispatch.
+- For ordered source groups, review `sequence_marker_mode` before dispatch. Confirm that embedded text has no external marker, external-marker text has no sequence wording, external markers are unique, and `visible_order` remains internal metadata.
+- Verify that each prompt job includes the Microsoft YaHei global typography policy and the generation contract requires Microsoft YaHei for all generated text.
 - Ensure `sample_generation_method` is present in `deck_spec.json`, every `prompts/slide_XX.json`, and `slide_jobs.json`; it must describe the exact backend/tool/mode used to generate the approved sample.
 - If the approved sample slide already exists and should not be regenerated, mark that slide in `deck_spec.json` with `sample_approved: true` or `approved_sample: true` before running `prepare_slide_prompts.py`; the helper records it as `accepted` when the final image file exists.
 - In built-in `image_gen` mode, ensure every slide-level required local source image has already been inspected with `view_image` before any delegated job that depends on it.
@@ -179,10 +226,13 @@ Subagent responsibilities:
 - Treat the approved sample slide as style reference only.
 - Treat any required source images as strict input assets and preserve their content according to the prompt.
 - Treat Word/PDF/text report source grounding as strict content input. Do not introduce unsupported facts, external examples, data, recommendations, or labels.
+- Treat `source_fidelity_contract` as a strict semantic and structure input. Render exactly one distinct visible content module per mapped source item, preserve exact count, core meaning, required terms, parent, and order, and use concise presentation language.
+- Follow the contract's sequence-marker mode exactly. Use one sequence signal per item and reject any candidate that combines visible sequence wording with a numeric or alphabetic marker.
+- Use Microsoft YaHei for every generated text element and reject candidates that render another font family or simulated handwritten/serif/display/monospace/calligraphic type. Preserve text already baked into a strict supplied image.
 - Inspect the generated candidate for text quality, style consistency, required-image inclusion, and layout issues before returning it.
 - Return only the selected original generated image path, the backend used, and a one-sentence QA note.
 
-Subagents must not edit `outline.md`, `deck_spec.json`, other slide job files, `origin_image/`, `speech.md`, or the final `.pptx`. The parent agent alone records selected outputs and performs final assembly.
+Subagents must not edit `outline.md`, `deck_spec.json`, other slide job files, `origin_image/`, an opt-in `speech.md`, or the final `.pptx`. The parent agent alone records selected outputs and performs final assembly.
 
 Do not continue sequentially after the sample if subagents are part of the confirmed full-generation workflow and cannot be used. Stop and report the blocker, unless the user explicitly changes the requirement.
 
@@ -244,4 +294,4 @@ Final slide image naming rules:
 - Keep rejected variants, drafts, or reference images out of `origin_image/`. If you need to preserve them, place them in the project root or a separate `drafts/` directory.
 - Before assembling, verify every expected `slide_XX.png` exists in `origin_image/`, there are no missing or extra final slide images, and `slide_job_status.py` shows all non-sample slide jobs as `recorded`.
 
-For Chinese decks, explicitly ask the image backend to render Chinese text accurately and avoid garbled characters.
+For Chinese decks, explicitly ask the image backend to use Microsoft YaHei for all generated text, render Chinese accurately, and avoid garbled characters.

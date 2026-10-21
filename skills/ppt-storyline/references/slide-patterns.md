@@ -1,28 +1,31 @@
 # Slide Patterns
 
-## Good Message Titles
+Read the shared PPT content rules linked from `SKILL.md` before using these patterns. The source's hierarchy and meaning govern the pattern choice.
 
-- Use a complete sentence.
-- Include the direction of change, magnitude, and implication when available.
-- Prefer "because" logic when causality is central.
-- Avoid neutral topic labels.
+## Clear Titles and Body Text
+
+- Preserve source section names, item identities, order, and parent-child relationships.
+- A title can identify a topic or state a supported conclusion. Use the form that fits the source; do not force all titles into conclusions.
+- Write body text as complete, natural statements. Keep the necessary subject, action, relationship, scope, and conditions. A short noun label can name an object; it cannot replace an explanation the reader needs.
+- State the direction, magnitude, and implication of a change only when supported. Use causal wording only when the source establishes causation.
+- Do not impose a fixed character count, bullet count, or sentence count. Solve space constraints through layout and faithful continuation pages.
 
 ## Common Exhibit Types
 
-- Bridge chart: explain movement between two periods.
-- Driver tree: decompose value, profit, cost, or demand.
-- 2x2 matrix: compare strategic choices with two meaningful axes.
-- Benchmark table: identify gaps against peers or best practice.
-- Value chain map: show economics, control points, and bottlenecks.
-- Roadmap: sequence initiatives, milestones, owners, and dependencies.
-- Heatmap: prioritize opportunities or risks.
+- Bridge chart: explain a supported decomposition of change between two periods.
+- Driver tree: show an established decomposition of value, profit, cost, or demand.
+- Comparison matrix: compare the actual source alternatives on supported dimensions; do not invent a fourth item to fill a 2x2 layout.
+- Benchmark table: compare peers using consistent scope and definitions.
+- Value chain map: show the source's activities and relationships.
+- Roadmap: show genuine sequence, milestones, owners, and dependencies.
+- Heatmap: show an evidenced comparison or prioritization.
+- Grouped framework: preserve parallel groups, each group's subitems, and the original sibling counts.
 
 ## Slide Quality Check
 
-Before finalizing a page, ask:
+Perform these checks in order:
 
-- Can the reader understand the message from the title alone?
-- Does the exhibit prove the title?
-- Is there one dominant idea?
-- Are numbers labeled with source, date, unit, and scope?
-- Does the page tell the audience what to do next?
+1. **Source comparison:** match each source node to its visible page content; verify item counts at every level, order, parent-child relations, names, and qualifications. Confirm that a continuation has not turned one item into several or merged siblings.
+2. **Independent page reading:** close the source and read the rendered page on its own. Check whether the text says who does what, under what conditions, and how items relate, without reconstructing omitted meaning from memory. Confirm that arrows and visual grouping communicate the intended relationship.
+
+Both checks must pass before delivery. A visually attractive page with altered structure or incomplete language fails.

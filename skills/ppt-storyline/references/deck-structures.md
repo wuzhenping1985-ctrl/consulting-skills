@@ -1,5 +1,7 @@
 # Consulting Deck Structures
 
+These are optional starting points for a new topic without a prescribed outline, or for restructuring that the user explicitly authorized. Read the shared PPT content rules linked from `SKILL.md` first. When supplied content has a structure, preserve its item counts, order, and parent-child relationships at every level; do not fit it into any numbered example below. The numbers below describe examples, not required section or page counts. Pagination may change without changing the source framework.
+
 ## Executive Strategy Deck
 
 1. Executive summary

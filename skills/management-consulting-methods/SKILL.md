@@ -12,7 +12,7 @@ description: Apply core management consulting methods to ambiguous business prob
 3. Build a MECE issue tree or logic tree.
 4. Form hypotheses that can be tested with data, interviews, benchmarks, or workshops.
 5. Translate the issue tree into workstreams, analyses, data needs, interview questions, and deliverables.
-6. Synthesize into answer-first communication: finding, evidence, implication, recommendation.
+6. Synthesize into answer-first communication: a concrete finding, its evidence, the operating mechanism and its consequence. Include recommendations when the assignment requests them.
 
 ## Method Selection
 

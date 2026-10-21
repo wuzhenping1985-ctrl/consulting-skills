@@ -232,6 +232,8 @@ def create_presentation(
         image_files: 幻灯片图片文件列表
         output_path: 输出 PPT 文件路径
         aspect_ratio: 幻灯片宽高比（16:9 或 4:3）
+        speaker_notes: 显式请求写入的逐页备注；默认不传入备注
+        template_path: 可选 PPTX 模板路径
 
     Returns:
         bool: 成功返回 True，失败返回 False
@@ -239,6 +241,8 @@ def create_presentation(
     try:
         try:
             from pptx import Presentation
+            from pptx.oxml.ns import qn
+            from pptx.oxml.xmlchemy import OxmlElement
             from pptx.util import Inches
         except ImportError:
             print("错误：未安装 python-pptx 库")
@@ -307,6 +311,16 @@ def create_presentation(
                 notes_frame = slide.notes_slide.notes_text_frame
                 notes_frame.clear()
                 notes_frame.text = note_text
+                for paragraph in notes_frame.paragraphs:
+                    for run in paragraph.runs:
+                        run.font.name = "Microsoft YaHei"
+                        run_properties = run._r.get_or_add_rPr()
+                        for font_tag in ("a:ea", "a:cs"):
+                            font_element = run_properties.find(qn(font_tag))
+                            if font_element is None:
+                                font_element = OxmlElement(font_tag)
+                                run_properties.append(font_element)
+                            font_element.set("typeface", "Microsoft YaHei")
 
             print(f"[OK] 已添加第 {i} 页: {os.path.basename(image_path)}")
 
@@ -365,6 +379,9 @@ def main():
   # 指定 4:3 宽高比
   python assemble_ppt.py /path/to/base/ MyPresentation.pptx --aspect-ratio 4:3
 
+  # 仅在明确需要备注时启用
+  python assemble_ppt.py /path/to/base/ MyPresentation.pptx --include-speaker-notes
+
   # 只初始化目录，不生成 PPT
   python assemble_ppt.py /path/to/base/ MyPresentation.pptx --init
 
@@ -374,7 +391,7 @@ def main():
   │   ├── slide_01.png
   │   ├── slide_02.png
   │   └── ...
-  ├── speech.md (可选，将写入 PPT 备注)
+  ├── speech.md (可选；仅配合 --include-speaker-notes 写入 PPT 备注)
   └── MyPresentation.pptx (将在此生成)
 
 注意：
@@ -383,7 +400,8 @@ def main():
   - 图片文件按文件名排序
   - 建议图片文件命名为: slide_01.png, slide_02.png, ...
   - 每张图片会充满整个幻灯片页面
-  - 如果项目目录下存在 speech.md，会按 Slide N 标题写入每页备注
+  - 默认不写入 PPT 备注，即使项目目录下存在 speech.md
+  - 只有传入 --include-speaker-notes 时，才会按 Slide N 标题读取 speech.md
         '''
     )
 
@@ -399,6 +417,9 @@ def main():
     parser.add_argument('--template',
                         default=os.environ.get('CODEX_PPT_TEMPLATE'),
                         help='Optional PPTX template path. Preserves template masters, layouts, and theme.')
+    parser.add_argument('--include-speaker-notes',
+                        action='store_true',
+                        help='显式读取 speech.md 并写入 PPT 备注；默认关闭')
 
     args = parser.parse_args()
 
@@ -444,9 +465,22 @@ def main():
         sys.exit(1)
 
     print(f"找到 {len(image_files)} 张幻灯片图片\n")
-    speaker_notes = load_speaker_notes(ppt_project_dir)
-    if speaker_notes:
-        print(f"找到 {len(speaker_notes)} 页备注: {os.path.join(ppt_project_dir, 'speech.md')}\n")
+    speaker_notes: Dict[int, str] = {}
+    speech_path = os.path.join(ppt_project_dir, "speech.md")
+    if args.include_speaker_notes:
+        if not os.path.exists(speech_path):
+            print(f"错误：已启用备注写入，但 speech.md 不存在: {speech_path}")
+            sys.exit(1)
+        speaker_notes = load_speaker_notes(ppt_project_dir)
+        if not speaker_notes:
+            print(
+                "错误：已启用备注写入，但 speech.md 未包含可识别的 "
+                "Slide N 或 第 N 页 标题及备注内容"
+            )
+            sys.exit(1)
+        print(f"找到 {len(speaker_notes)} 页备注: {speech_path}\n")
+    elif os.path.exists(speech_path):
+        print(f"检测到 speech.md，默认忽略且不写入 PPT 备注: {speech_path}\n")
 
     # 创建演示文稿
     print(f"正在创建 PPT (宽高比: {args.aspect_ratio})...")

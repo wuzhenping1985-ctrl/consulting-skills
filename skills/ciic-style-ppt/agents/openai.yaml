@@ -1,0 +1,4 @@
+interface:
+  display_name: "CIIC Style PPT"
+  short_description: "创建、编辑并校验中智蓝色咨询风格的专业 PowerPoint 演示文稿"
+  default_prompt: "Use $ciic-style-ppt to create a Chinese management consulting deck in the CIIC blue style."

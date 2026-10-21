@@ -1,43 +1,24 @@
-# Consulting Skills
+# Codex跨设备配置仓库
 
-Portable Codex skills for management consulting work. These skills use Markdown-only instructions and relative references so they can be used on macOS and Windows.
+本仓库用于在macOS与Windows之间同步个人技能、共享规则和插件安装清单。Windows安装脚本执行前会建立备份，并将Mac绝对路径转换为当前Windows用户目录。
 
-## Skills
-
-- `financial-diagnosis`: financial performance diagnosis, metrics, bridges, peer gaps, and management actions.
-- `industry-research`: market sizing, value chain, competition, policy, trends, and industry outlook.
-- `ppt-storyline`: consulting-style deck storylines, slide messages, evidence chains, and executive summaries.
-- `strategy-analysis`: strategic options, growth paths, where-to-play/how-to-win choices, and roadmaps.
-- `management-consulting-methods`: issue trees, MECE structures, hypotheses, workplans, and synthesis.
-- `proposal-sow`: consulting proposals, SOWs, workstreams, deliverables, and governance.
-
-## Install By Copying
-
-Copy each skill folder into the Codex skills directory.
-
-macOS:
-
-```bash
-mkdir -p ~/.codex/skills
-cp -R skills/* ~/.codex/skills/
-```
-
-Windows PowerShell:
+## Windows一键安装
 
 ```powershell
-New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\skills"
-Copy-Item -Recurse -Force .\skills\* "$env:USERPROFILE\.codex\skills\"
+Set-ExecutionPolicy -Scope Process Bypass
+.\windows-sync\install.ps1
 ```
 
-Restart Codex after copying.
+详细说明见 [windows-sync/README.md](windows-sync/README.md)。
 
-## Install From GitHub
+## 同步内容
 
-After pushing this repository to GitHub, install individual skills with the Codex skill installer:
+- `skills/`：个人技能、PPT版式参考库及共享规则文件。
+- `global-rules/`：跨设备AGENTS规则模板。
+- `windows-sync/manifest.json`：技能、共享文件和插件清单。
+- `windows-sync/install.ps1`：Windows安装、备份、路径转换和插件恢复脚本。
+- `windows-sync/verify.ps1`：Windows端独立核验脚本。
 
-```text
-帮我从这个 GitHub 地址安装 skill：
-https://github.com/<owner>/<repo>/tree/main/skills/financial-diagnosis
-```
+## 安全边界
 
-Repeat for any other skill folder, or ask Codex to install several paths from the same repository.
+仓库不保存Codex登录凭据、API密钥、聊天记录、插件缓存、运行时缓存、项目授权路径及Mac专用MCP配置。远程插件在Windows端首次使用时按界面提示完成账户授权。

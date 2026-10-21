@@ -1,0 +1,55 @@
+{
+  "created": "2026-09-28",
+  "sources": [
+    {
+      "id": "A",
+      "name": "全套框架PPT模板_中智咨询配色_微软雅黑_最小10号.pptx",
+      "original": "/Users/shampwu/Desktop/职业/咨询人生/个人工作/PPT模板/全套框架PPT模板_中智咨询配色_微软雅黑_最小10号.pptx",
+      "stored": "sources/全套框架PPT模板_中智咨询配色_微软雅黑_最小10号.pptx",
+      "slide_count": 231,
+      "sha256": "6b3d12c05fe626c795217a1810e8d6a5a669a852e74c3e5282be001bb57f462b",
+      "slide_order_verified": true
+    },
+    {
+      "id": "B",
+      "name": "PPT模板页面整理_20160624.pptx",
+      "original": "/Users/shampwu/Desktop/职业/咨询人生/个人工作/PPT模板/PPT模板页面整理_20160624.pptx",
+      "stored": "sources/PPT模板页面整理_20160624.pptx",
+      "slide_count": 355,
+      "sha256": "8690d935dfd1c63a61d3ed56d8dd8c1bab822dde5c46fbbcad1f77338d137c1e",
+      "slide_order_verified": true
+    },
+    {
+      "id": "C",
+      "name": "PPT模板.pptx",
+      "original": "/Users/shampwu/Desktop/职业/咨询人生/个人工作/PPT模板/PPT模板.pptx",
+      "stored": "sources/PPT模板.pptx",
+      "slide_count": 210,
+      "sha256": "aeb3fe9ba8306315d98f691926361cd2ef72b4cbb96bcfeb1a14b2c06780af25",
+      "slide_order_verified": true
+    },
+    {
+      "id": "D",
+      "name": "国有企业科技创新规划方案V20260525 (1).pptx",
+      "original": "/Users/shampwu/Desktop/职业/中智咨询/学习类资料/科技类/国有企业科技创新规划方案V20260525 (1).pptx",
+      "stored": "sources/国有企业科技创新规划方案V20260525 (1).pptx",
+      "slide_count": 12,
+      "sha256": "cbd76c904fcaab908318181c8bb4919eb37879dabcac89c9ea337d3b70190567",
+      "slide_order_verified": true,
+      "role": "完整咨询方案设计参考"
+    },
+    {
+      "id": "E",
+      "name": "科技企业“十五五”科技创新战略规划-20260525.pptx",
+      "original": "/Users/shampwu/Desktop/职业/中智咨询/学习类资料/科技类/科技企业“十五五”科技创新战略规划-20260525.pptx",
+      "stored": "sources/科技企业“十五五”科技创新战略规划-20260525.pptx",
+      "slide_count": 14,
+      "sha256": "ac24a088341fb832749798ff1414939aa08bb1e3a0e85b0bfdf6561cbf93230d",
+      "slide_order_verified": true,
+      "role": "完整咨询方案设计参考"
+    }
+  ],
+  "total_slides": 822,
+  "note": "五份私人参考，共822页。A/B/C提供基本构图，D/E补充完整咨询内容页面。源文件保留，示例观点和数字不自动作为新稿事实。",
+  "updated": "2026-09-29"
+}

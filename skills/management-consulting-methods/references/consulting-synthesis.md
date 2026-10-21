@@ -4,9 +4,12 @@
 
 Use:
 
-1. Observation: what the evidence shows.
-2. Interpretation: why it matters.
-3. Implication: what the client should do or decide.
+1. Finding: a direct judgment about the business, at the strength supported by the evidence.
+2. Evidence: the change, period, entity, scope and relevant comparison.
+3. Mechanism: what specific business activity connects the evidence to the result.
+4. Consequence: the effect on sales, profit, cash, resources or competitive position.
+
+Add an action or decision only when requested. A diagnosis can end with its finding. Do not replace a missing mechanism with phrases about joint evaluation, strengthening coordination or the management value of benchmarking.
 
 Example:
 
@@ -21,10 +24,12 @@ Example:
 
 ## Executive Summary Pattern
 
-Use 3-5 bullets:
+For decision assignments, useful elements include:
 
 - Finding
 - Evidence
 - Implication
 - Recommended action
 - Decision required or next step
+
+For analytical case studies, select only findings and supported consequences. A news item needs an explanation of its business role and tradeoff; a numerical bridge needs independent operating evidence before it becomes a causal claim. Check consolidation scope, asset stage and time period sentence by sentence. Keep unresolved questions in the working record when the formal report is restricted to verified findings.

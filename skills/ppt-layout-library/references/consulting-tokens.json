@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "scope": "本用户管理咨询及国企汇报的新建或改版PPT；当前明确要求优先；忠实复刻沿用指定原样",
+  "canvas": {
+    "width_px": 1280,
+    "height_px": 720,
+    "width_emu": 12192000,
+    "height_emu": 6858000
+  },
+  "palette_ref": "../../mck-ppt-design/references/team/ciic-palette.json",
+  "palette_resolution": "palette_ref相对于本JSON所在references目录解析；沿用该文件primary/text/white/accents/tints，勿从源稿像素重采样默认主蓝",
+  "typeface": "Microsoft YaHei",
+  "font_request": "微软雅黑",
+  "font_sizes_px": {
+    "slide_title": 36,
+    "group_title": 24,
+    "body": 24,
+    "dense_body_start": 22,
+    "footnote": 16
+  },
+  "font_sizes_note": "起始参数，非固定容量。px×0.75=pt。按投影或专业报告阅读场景选择字号，标题与正文先按实文排入关系图；来源12–16pt为观察值，不设通用密度或字数目标。",
+  "layout": {
+    "left_px": 64,
+    "right_px": 64,
+    "top_px": 40,
+    "bottom_px": 44,
+    "title_width_px": 1152,
+    "content_top_px": 158,
+    "group_gap_px": 28,
+    "text_inset_px": 12
+  },
+  "lines": {
+    "structure_width_px": 1.6,
+    "secondary_width_px": 1,
+    "separator_dash_px": 5,
+    "separator_gap_px": 5
+  },
+  "effects": {
+    "shadow": "none",
+    "animation": "none"
+  },
+  "native_editability": {
+    "text": true,
+    "diagrams": true,
+    "tables_when_requested": true,
+    "charts_when_needed": true
+  },
+  "source_observations": {
+    "D005": {
+      "main_width_fraction_approx": 0.64,
+      "case_width_fraction_approx": 0.23
+    },
+    "E007": {
+      "zone_width_fractions_approx": [
+        0.18,
+        0.5,
+        0.28
+      ]
+    },
+    "E009": {
+      "zone_width_fractions_approx": [
+        0.35,
+        0.37,
+        0.24
+      ]
+    },
+    "E006": {
+      "semantic_groups": "目标—原则—重点任务—机制保障；任务层内1条主线与3项抓手分别归组"
+    },
+    "E011": {
+      "semantic_groups": "四项并列保障，上下错位的开放正文，贯通轴与清楚的目标端点共同建立焦点"
+    }
+  },
+  "observation_note": "比例仅描述来源页面，不构成新页网格。节点数、层数、阶段、文本区域和比例须按当前来源重新分配。",
+  "sources": {
+    "D": {
+      "filename": "国有企业科技创新规划方案V20260525 (1).pptx",
+      "pages": 12,
+      "sha256": "cbd76c904fcaab908318181c8bb4919eb37879dabcac89c9ea337d3b70190567"
+    },
+    "E": {
+      "filename": "科技企业“十五五”科技创新战略规划-20260525.pptx",
+      "pages": 14,
+      "sha256": "ac24a088341fb832749798ff1414939aa08bb1e3a0e85b0bfdf6561cbf93230d"
+    }
+  },
+  "layer_label": {
+    "component": "layerLabel",
+    "padding_x_px": 4,
+    "padding_y_px": 4,
+    "default_font_size_px": 22,
+    "minimum_font_size_px": 20,
+    "wrap": "none",
+    "newlines": "explicit_only",
+    "overflow_action": "require_relayout",
+    "measurement_note": "字符宽度与行高采用保守预检；最终导入渲染仍须逐页查看"
+  },
+  "profiles": {
+    "professional_consulting_reading": {
+      "title_px": 32,
+      "group_title_px": [
+        21,
+        28
+      ],
+      "body_px": [
+        17.5,
+        20
+      ],
+      "matrix_detail_px": [
+        16.5,
+        18
+      ],
+      "purpose": "专业方案阅读；实际对照原稿和新稿检验层次与可读性，不能用缩字补足所有内容"
+    },
+    "projection": {
+      "body_start_px": 24,
+      "purpose": "投影演讲；必要时保留同层结构续页"
+    }
+  },
+  "header_layout": "pageFrame按实际标题行数与总述决定内容起点；layout数值只作起始参考，不强制所有页面同高留白",
+  "design_validation": {
+    "comparison": "同尺度来源/新稿并排，记录图形功能、专业深度、主次及留白角色",
+    "revision": "重要迁移至少完成一轮依据独立审阅意见的实质修订",
+    "not_quality_metrics": [
+      "图片数量",
+      "形状数量",
+      "无溢出",
+      "字体一致",
+      "页面占用率"
+    ]
+  }
+}

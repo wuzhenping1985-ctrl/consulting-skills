@@ -1,8 +1,12 @@
 # Outline, Style, And Sample
 
+制作大纲、样页及视觉方案时，必须执行[PPT艺术构图与展示要求](/Users/shampwu/.codex/skills/ppt-art-direction.md)。以完整原文安排空间与图形，默认采用非表格构图；不以密度或原文段落长度判失败。
+
 Read this before writing or updating `outline.md`, offering visual styles, using files from `references/`, or generating/approving the sample slide.
 
 If the user asks to save a finished deck style or a user-supplied image/PDF/PPT/PPTX style for future reuse, read `style-library.md`.
+
+For every Word/PDF/text report deck, also read `source-fidelity-and-structure-conservation.md` and apply it as a binding content contract.
 
 ## Plan The Deck Outline
 
@@ -10,19 +14,20 @@ Create a concise `outline.md` draft before generating images. For each slide, de
 
 - Slide number
 - Slide title / headline, which is the page storyline shown at the top of the slide
-- 3-5 key points
+- Key points. When the source contains a countable group at any source level, preserve the exact item count at that level. Use natural labels and complete explanations; retain each item's meaning and required terms. Where headings are absent, preserve the original paragraph relationships rather than imposing a default number of points.
 - Source basis for Word/PDF/text report decks: the report section, paragraph, table, figure, or user-provided asset that supports the slide
 - Source framework for Word/PDF/text report decks: the original top-level section and sub-level labels that the slide must preserve, such as `一是 > 中央层面 / 地方层面 / 因此`
+- Source item mapping for Word/PDF/text report decks: stable group and item ids, visible parent label, concise visible item label and message, label mode, compression note when applicable, required terms, source order, sequence-marker mode, external marker and edit note when applicable, one unique visual module id per core item, and the exact expected visible module count
 - Optional visual idea
 - Layout role and intent, such as cover, agenda, section divider, concept explanation, process, comparison, timeline, data evidence, architecture, case study, summary, or Q&A
 - Logic archetype for every normal consulting/report content slide, such as house/pillar framework, layered architecture, process lane, causal chain, responsibility boundary, evidence-to-insight funnel, closed loop, value chain, interpreted matrix, or comparison columns with convergence
 - Reasoning path for every normal consulting/report content slide, showing the source-grounded logic the reader should follow
 - Framework mapping for every normal consulting/report content slide, explaining how source points map to visual roles such as roof, pillars, foundation, lanes, stages, axes, boundary zones, loop nodes, or convergence points
 - Why-not-table note for every normal consulting/report content slide, unless the slide is intentionally preserving a source table or exact data
-- Content density for ordinary consulting/report pages, including enough short text units or labelled cells to avoid a sparse body page
+- Complete original text, source-grounded graphic relationships and purposeful whitespace for each content page; no short-text-unit, cell-count or density quota
 - Required source images, if any, including the image path or attachment name, its role on the slide, and whether it is a strict input asset or only a style/layout reference
 
-For Chinese consulting/report decks, also assign each content slide a logic display type before generation. Prefer framework-style logical exposition: house/pillar frameworks, layered architectures, process lanes, causal chains, responsibility-boundary frames, evidence-to-insight funnels, closed loops, value chains, interpreted matrices, and comparison columns with convergence. Read `references/框架演绎版式规则.md` when planning from a Word/PDF/text report. Normal content slides should be medium-high to high density, with the body zone mostly occupied by readable argument text inside a structure that makes hierarchy, causality, sequence, dependency, boundary, or transformation visible. Plan 10-16 readable Chinese text units or an equivalent source-grounded framework/matrix when the source supports it, and include compact explanatory sentences rather than only noun labels. The page storyline is the top slide title/headline itself, such as `华润案例：价值创造型总部与分层分类授权`; do not plan or render a separate visible line labelled `STORYLINE` or `STORYLINE：`. If a slide needs a summary viewpoint, place it in the title or a compact insight band immediately below the title and above the main body; the viewpoint must be a source-grounded logical conclusion, implication, cause-effect judgement, or decision criterion. Avoid planning pages whose main body is a simple table, plain 2x2/2x3 grid, repeated equal-weight cards, icon row, icon-only card set, repeated icon bullet rows, sparse single-card composition, bottom slogan band, bottom takeaway/callout boxes, paired bottom text boxes, unsupported slogan-like "金句", or scattered small pictogram elements unless the user explicitly asks for that style.
+For Chinese consulting/report decks, also assign each content slide a logic display type before generation. Prefer framework-style logical exposition: house/pillar frameworks, layered architectures, process lanes, causal chains, responsibility-boundary frames, evidence-to-insight funnels, closed loops, value chains, interpreted matrices, and comparison columns with convergence. Read `references/框架演绎版式规则.md` when planning from a Word/PDF/text report. Use a structure that makes the original hierarchy, causality, sequence, dependency, boundary, or transformation visible. Content completeness determines density and spacing. Preserve the number and nesting of source items without imposing a text-unit quota. Use natural labels and complete explanations; adjust the layout when relationships or conditions need more space. The page storyline is the top slide title/headline itself, such as `华润案例：价值创造型总部与分层分类授权`; do not plan or render a separate visible line labelled `STORYLINE` or `STORYLINE：`. If a slide needs a summary viewpoint, place it in the title or a compact insight band immediately below the title and above the main body; the viewpoint must be a source-grounded logical conclusion, implication, cause-effect judgement, or decision criterion. Avoid planning pages whose main body is a simple table, plain 2x2/2x3 grid, repeated equal-weight cards, icon row, icon-only card set, repeated icon bullet rows, sparse single-card composition, bottom slogan band, bottom takeaway/callout boxes, paired bottom text boxes, unsupported slogan-like "金句", or scattered small pictogram elements unless the user explicitly asks for that style.
 
 For text-report decks, simple tables are not the default answer. Use a table only when the source contains exact rows/columns, data, or a true comparison that would be distorted by another structure. Otherwise, turn source points into a framework with visible roles: roof/foundation/pillars, levels, lanes, gates, loop nodes, boundary zones, axes, or convergence points. The transformation must remain faithful to the report; do not invent dimensions, conclusions, causes, or recommendations to make a framework look richer.
 
@@ -34,11 +39,13 @@ If the user asks to use the attached business-blue framework templates, read `re
 - Style scope: structure reference only; do not copy template content, logos, QR codes, instruction pages, non-source claims, or original template color styling
 - Color mapping: remap all template fills, strokes, labels, backgrounds, and emphasis marks to the confirmed deck palette; default to 中智 blue / pale-blue / white / charcoal with small orange-red accents, not the source template's original colors
 
-When the source is a Word/PDF/text report, the outline must be source-grounded. Read and extract the report before outlining. Use the report's wording, stated findings, tables, figures, numbers, definitions, named entities, and explicit recommendations as the only content source unless the user explicitly requests external enrichment. The outline may summarize, group, reorder, deduplicate, or translate prose into consulting logic structures, but it must not invent facts, cases, benchmarks, management diagnoses, risks, or recommendations that are not in the report. Prefer original source phrases for slide titles, level labels, node labels, judgement questions, and conclusion phrases. Paraphrase only when needed for length, and keep the original terms and hierarchy visible. When translating prose into a framework, document how each source point maps into the visual structure so the framework is analytical rather than decorative.
+When the source is a Word/PDF/text report, the outline must be source-grounded. Read and extract the report before outlining. Use the report's stated findings, tables, figures, numbers, definitions, named entities, and explicit recommendations as the content boundary unless the user explicitly requests external enrichment. Preserve viewpoints and every supporting item; express them in natural, complete language without removing relationships or conditions. Do not group, reorder, deduplicate, merge, split, omit, duplicate, reparent, or create themes across peer source items. Do not invent facts, cases, benchmarks, management diagnoses, risks, or recommendations that are absent from the report. Preserve required terms, numerical meaning, causal direction, conditions, scope, polarity, and conclusions. When translating prose into a framework, document the one-to-one mapping from every source item to its visual module and record any wording change, confirming that each item and its complete meaning remain intact.
 
-The outline must also be source-framework-faithful. Before drafting slide roles, reconstruct the source document's hierarchy as a `source_structure_map`: headings, numbered points, named sub-sections, paragraph order, and table/figure row groups. Preserve that hierarchy in the slide plan unless the user explicitly approves a different framework. Treat explicit labels such as `一是 / 二是 / 三是`, `中央层面 / 地方层面`, `首先 / 其次 / 因此`, table row categories, and named subheadings as structural content, not disposable wording.
+The outline must also be source-framework-faithful. Before drafting slide roles, reconstruct the source document's hierarchy as a `source_structure_map`: headings, numbered points, named sub-sections, paragraph order, and table/figure row groups. Record viewpoints and all supporting items in their original hierarchy, then build the complete `source_structure_ledger` defined in `source-fidelity-and-structure-conservation.md` for countable groups at every source level. Preserve hierarchy, cardinality, core meaning, required terms, and order in the slide plan. Treat explicit labels such as `一是 / 二是 / 三是`, `中央层面 / 地方层面`, `首先 / 其次 / 因此`, table row categories, and named subheadings as structural signals; retain their complete explanations and remove only genuinely repeated wording. For every ordered group, choose one sequence-marker mode. Keep visible sequence wording without any added marker, or remove the sequence wording and use one external marker per item. Do not plan both forms on the same item.
 
-Do not convert nested source logic into arbitrary peer bullets. If the source says one top-level point contains `中央层面` and `地方层面`, the slide must show those two sub-levels under that same point, not replace them with a flat list of six self-invented bullets. If the source has three stated points, do not add a fourth visible module, diagnostic matrix, "检审切入点" panel, or root-cause map unless that module is explicitly present in the source or the user has approved the addition. Source-supported details must remain under their original parent section.
+Do not convert nested source logic into arbitrary peer bullets. If the source says one top-level point contains `中央层面` and `地方层面`, the slide must show those two sub-levels under that same point, not replace them with a flat list of six self-invented bullets. If the source has three stated points, do not add a fourth visible module, diagnostic matrix, "检审切入点" panel, or root-cause map. Source-supported details must remain under their original parent section.
+
+Do not combine peer source points to reduce their count or divide one point to increase their count. If a parent argument or supporting subsection has four elements, keep four ledger items and four mapped visible modules. Retain the supporting explanations and adapt the layout or use continuation slides when they do not fit readably; no supporting item may be omitted for space.
 
 Do not create attractive but disconnected summary sentences. If the report has a `归纳起来` sentence, it may appear only as the source's own summary and must be visibly connected back to the sections it summarizes. If the report does not contain the summary wording, do not place it as a headline, bottom slogan, or conclusion band.
 
@@ -54,7 +61,20 @@ Slide 4: 模式框架：组织形态与管控力度共同决定管控模式
 - Key points: ...
 ```
 
-If the report does not support a proposed slide or storyline, remove that slide, merge it into a supported page, or ask the user whether to add external analysis. Do not silently fill gaps with general consulting knowledge.
+For every slide that represents an explicit source group, add the exact source mapping:
+
+```markdown
+- Source group: G-01 | 某论点 | core viewpoint=某论点由四个要素构成 | source count=4 | slide visible module count=4
+- Source item mapping:
+  - G-01-01 | source label=一是坚持长期主义 | visible label=坚持长期主义 | visible message=一句话表达核心含义 | sequence marker mode=external_marker | external marker=1 | sequence edit note=删除一是并保留外置序号1 | label mode=faithful_compression | order=1 | visual module=module-1
+  - G-01-02 | source label=二是强化能力建设 | visible label=强化能力建设 | visible message=一句话表达核心含义 | sequence marker mode=external_marker | external marker=2 | sequence edit note=删除二是并保留外置序号2 | label mode=faithful_compression | order=2 | visual module=module-2
+  - G-01-03 | source label=三是完善治理机制 | visible label=完善治理机制 | visible message=一句话表达核心含义 | sequence marker mode=external_marker | external marker=3 | sequence edit note=删除三是并保留外置序号3 | label mode=faithful_compression | order=3 | visual module=module-3
+  - G-01-04 | source label=四是健全评价闭环 | visible label=健全评价闭环 | visible message=一句话表达核心含义 | sequence marker mode=external_marker | external marker=4 | sequence edit note=删除四是并保留外置序号4 | label mode=faithful_compression | order=4 | visual module=module-4
+```
+
+Show the complete ledger coverage summary with the outline. An included parent group carries all of its direct child items. A group marked `excluded_with_user_approval` must include the approval note.
+
+If the report does not support a proposed slide or storyline, remove that slide, place supported content on an existing page without combining atomic source items, or ask the user whether to add external analysis. Do not silently fill gaps with general consulting knowledge.
 
 If the proposed slide structure does not match the source framework, redesign before showing the outline. Visual devices such as flows, matrices, triangles, funnels, or radial maps are permitted only as containers for the source hierarchy. They must not become a new visible logic system that competes with or overwrites the report's own framework.
 
@@ -62,9 +82,9 @@ Save the draft to `{base_dir}/{deck_name}/outline.md` once the project directory
 
 Show the outline to the user for confirmation and wait for approval before moving to backend confirmation or image generation, unless the user explicitly asked you to skip confirmation. The default visual style is `中智蓝色咨询模板风` and does not require a separate style-selection approval. If any slide lists required source images, explicitly ask the user to verify that each image is assigned to the correct slide and role before generation. If the user requests changes, update `outline.md` and ask for confirmation again.
 
-Stop after writing the outline draft. At this point, report the `outline.md` path, slide count, required source images and their slide mapping, and that no slide images or PPTX have been generated yet. Do not proceed to `deck_spec.json`, `speech.md`, prompt preparation, backend selection, or sample generation until the user approves the outline.
+Stop after writing the outline draft. At this point, report the `outline.md` path, slide count, required source images and their slide mapping, and that no slide images or PPTX have been generated yet. Do not proceed to `deck_spec.json`, prompt preparation, backend selection, or sample generation until the user approves the outline. Do not create `speech.md` unless the user explicitly requests speaker notes; if requested, keep it behind the same approval gate.
 
-If the user approved a sample slide, record that approved `slide_XX.png` path as the deck-level style reference. Later slide prompts and subagent handoffs should include it as a style-only reference so each page keeps the same palette, typography mood, density, texture, and visual identity without copying the sample's exact layout.
+If the user approved a sample slide, record that approved `slide_XX.png` path as the deck-level style reference. Later slide prompts and subagent handoffs should include it as a style-only reference so each page keeps the same palette, Microsoft YaHei scale/weight/alignment system, density, texture, and visual identity without copying the sample's exact layout or another font family visible in the sample.
 
 Recommended structure:
 
@@ -94,6 +114,8 @@ Use Markdown image syntax inside the `Required images` list whenever the asset i
 
 ## Apply The Default Visual Style
 
+Apply one global typography rule before interpreting any visual style: every generated text element must use Microsoft YaHei (微软雅黑). This includes Chinese, Latin letters, numbers, punctuation, titles, body text, labels, annotations, captions, citations, and chart/table text. Regular and bold weights are allowed within the same family. Style choices may vary font size, weight, color, alignment, spacing, and hierarchy. Discard any competing font-family direction from a reference file, user-supplied style brief, rendered sample, or template. Preserve text already baked into a strict supplied image because it belongs to the source asset.
+
 Before generating slide images, apply `中智蓝色咨询模板风` as the default color-only style unless the user explicitly asks for another visual style, supplies a style reference, or asks to replicate a full template layout. This default style is pre-approved; do not stop to ask the user to confirm it each time.
 
 If the user has specified a different style, provided a style image, or provided a PDF/PPT/PPTX to use as style reference, do not force a 2-3 option style selection. Extract the usable style rules, briefly restate them, then proceed to backend confirmation and sample generation.
@@ -102,24 +124,24 @@ For PDF/PPT/PPTX style references, do not infer the visual system from document 
 
 When extracting style from reference material, separate content reuse from style reuse. Unless the user explicitly asks to reuse the source content, treat the provided image/PDF/PPT/PPTX as a style reference only.
 
-Default local template-derived style: this skill includes the CIIC Consulting 2024 16:9 template at `assets/ciic-consulting-2024-template/ciic-consulting-2024-template-16x9.pptx` and the extracted reusable color-only style `references/中智蓝色咨询模板风.md`. For every deck, read `references/中智蓝色咨询模板风.md` and use it as the default **color-only** style without offering unrelated alternatives, unless the user explicitly requests another style. Briefly restate the applied style rules, including that only the 中智 blue/pale-blue/white/charcoal/small orange-red palette is retained; any referenced framework template is recolored into this palette rather than inheriting its original colors; the top title/headline is the page storyline and no separate storyline/core-viewpoint row should be added; content pages should use medium-high to high information density, more readable text, no decorative icons by default, more logic demonstration boxes, no large blank body areas, no bottom takeaway/callout boxes, and no bottom deep-blue conclusion slogan band. Do not inspect or copy the bundled template layouts unless the user explicitly asks for full template replication.
+Default local template-derived style: this skill includes the CIIC Consulting 2024 16:9 template at `assets/ciic-consulting-2024-template/ciic-consulting-2024-template-16x9.pptx` and the extracted reusable color-only style `references/中智蓝色咨询模板风.md`. For every deck, read `references/中智蓝色咨询模板风.md` and use it as the default **color-only** style without offering unrelated alternatives, unless the user explicitly requests another style. Briefly restate the applied style rules, including that only the 中智 blue/pale-blue/white/charcoal/small orange-red palette is retained; any referenced framework template is recolored into this palette rather than inheriting its original colors; the top title/headline is the page storyline and no separate storyline/core-viewpoint row should be added; content pages should use artistic non-tabular whole-page compositions, complete original text, purposeful whitespace and only meaningful diagrams, no bottom takeaway/callout boxes, and no bottom deep-blue conclusion slogan band. Do not inspect or copy the bundled template layouts unless the user explicitly asks for full template replication.
 
 Only if the user explicitly asks for a different style and has not provided a clear direction, offer 2-3 concrete style directions and mark one as your recommendation. Each style option should briefly specify:
 
 - Color palette
 - Layout system
-- Typography direction
+- Microsoft YaHei size, weight, alignment, spacing, and hierarchy direction
 - Illustration or image treatment
 - Decorative elements
 - Density and whitespace rules
 
-After applying the default style or after the user chooses a different style, create one final style direction and keep the visual identity consistent across all slide prompts. Keep color palette, typography, texture, icon/illustration language, and overall mood stable. Do not reuse the same layout on every page.
+After applying the default style or after the user chooses a different style, create one final style direction and keep the visual identity consistent across all slide prompts. Keep color palette, Microsoft YaHei typography hierarchy, texture, icon/illustration language, and overall mood stable. Do not reuse the same layout on every page.
 
-For consulting decks, "density and whitespace rules" should normally mean medium-high to high information density with purposeful spacing, not minimalist whitespace. The main body should be carried by text, arrows, labelled boxes, matrices, process flows, comparison frames, and compact top/body insight callouts rather than decorative icons. Treat a normal content slide with repeated icon cards, icon-led bullet rows, a small central diagram, broad empty surrounding space, too few Chinese text units, label-only sparse diagrams, a weak top title/headline, an added separate title-summary label, bottom takeaway/callout boxes, paired bottom text boxes, unsupported slogan-like "金句", or a bottom full-width slogan band as a failed sample unless the user explicitly asked for that layout.
+For consulting decks, density and whitespace follow complete original content and reading needs. Establish a clear visual protagonist and whole-page silhouette with open body areas and source-grounded geometry. Equal card grids, shared rows and columns without user authorization, invented relationships, unclear labels, omitted source text or unsupported slogans are failures. Do not fail a sample merely for purposeful whitespace or long original paragraphs.
 
 The `references/` directory contains optional style references. Use them as inspiration, not as rigid templates. Adapt the style to the topic and audience.
 
-Important: a deck should have one coherent visual identity, not one repeated composition. Treat each reference as a style system: stable palette, typography, icon language, texture, and visual mood; variable page layout chosen from the slide's content role. `layout_blueprints` are candidate starting points only. Do not apply the same blueprint to every slide.
+Important: a deck should have one coherent visual identity, not one repeated composition. Treat each reference as a style system: stable palette, Microsoft YaHei typographic scale/weight/alignment, icon language, texture, and visual mood; variable page layout chosen from the slide's content role. `layout_blueprints` are candidate starting points only. Do not apply the same blueprint to every slide.
 
 Available references:
 
@@ -157,10 +179,11 @@ After the outline is approved, the default style is applied, and the image backe
 Sample slide requirements:
 
 - Use the applied default style description, or the user-confirmed alternative style description if the user requested another style.
+- Use Microsoft YaHei for every generated text element, including Chinese, Latin letters, numbers, punctuation, titles, body text, labels, annotations, captions, citations, and chart/table text. Reject any other generated font family or simulated handwritten/serif/display/monospace/calligraphic type. Text already baked into a strict supplied image remains unchanged.
 - Prefer a representative content slide over the cover when possible.
 - Demonstrate the intended deck rhythm: the sample should show how the chosen style adapts to a real content page, not just a generic fixed template.
 - If the sample uses a bundled framework template module, it must show the template's structural logic recolored into the confirmed deck palette. Keeping the template's original colors is a failed sample unless the user explicitly requested full template replication.
-- For consulting/report samples, demonstrate medium-high to high information density and framework-style logical exposition: the page should contain enough readable Chinese text in a source-grounded framework to look like a real management consulting page, without excessive blank body areas. The sample should make hierarchy, causality, sequence, dependency, boundary, or transformation visible, rather than simply arranging bullets into a table or grid. When the source supports it, use 10-16 meaningful Chinese text units or an equivalent interpreted matrix/framework, including compact explanatory sentences rather than only noun labels.
+- For consulting/report samples, demonstrate artistic non-tabular whole-page composition, purposeful whitespace and complete original wording. Source relationships determine any hierarchy, causality, sequence, dependency or branch; parallel content may remain in open areas. Preserve original counts and nesting. Review source structure, independently read visible text, then review the actual composition.
 - If the sample slide is generated from a text report, include the selected logic archetype in the prompt, such as house/pillar, layered architecture, process lane, causal chain, responsibility boundary, funnel, loop, value chain, interpreted matrix, or comparison columns with convergence. The visual body should show the reasoning path, not just independent boxes.
 - Do not use decorative icons, repeated icon cards, or icon-led bullet rows in a normal consulting/report sample unless the user explicitly requested an icon-led style.
 - Do not use a plain table, spreadsheet-like grid, or repeated equal-weight card set as the main body unless the approved outline says the source table must be preserved.
@@ -168,8 +191,10 @@ Sample slide requirements:
 - If a sample slide needs a summary viewpoint, put it in the top headline or a compact insight band between the title and main body. Do not put summary, evidence, or takeaway text boxes at the bottom of the page.
 - The summary viewpoint must be a source-grounded logical conclusion, implication, cause-effect judgement, or decision criterion. Do not add generic slogans, motivational phrases, decorative "金句", or unsupported catchphrases.
 - If the source is a Word/PDF/text report, all sample-slide text must be traceable to the slide's source basis. Do not add external facts, labels, cases, or recommendations just to make the page look richer.
-- If the source is a Word/PDF/text report, the sample should use original report wording wherever feasible. Treat self-created consulting labels, invented summary phrases, and source-detached bottom conclusions as failures even if they sound polished.
+- If the source is a Word/PDF/text report, the sample should preserve original complete wording by default. Reject semantic drift, invented summary phrases, source-detached conclusions, unauthorized compression or missing text; do not reject a faithful original paragraph because of its length.
 - If the source is a Word/PDF/text report, the sample slide must preserve the approved `Source framework`. Reject and regenerate any sample that hides an explicit subheading, flattens parent-child logic into unrelated peer bullets, or adds a visible module not present in the source framework.
+- If the source is a Word/PDF/text report, count every mapped visible peer module in the sample and reconcile it against the approved `source_item_mapping`. Verify core meaning and required terms. Reject and regenerate any sample with an added, merged, split, omitted, duplicated, semantically altered, reparented, or reordered source item.
+- If the sample contains an ordered source group, verify the approved `sequence_marker_mode`. Reject any module that combines embedded sequence wording with an external number or letter, restores removed sequence wording in `external_marker` mode, repeats an external marker, or renders internal `visible_order` metadata.
 - Do not include bottom takeaway/callout boxes, paired bottom text boxes, bottom evidence boxes, or a bottom full-width orange-red block plus deep-blue background plus white-text conclusion strip.
 - Save it directly as the intended final slide filename, such as `{base_dir}/{deck_name}/origin_image/slide_08.png`. In CLI/API fallback mode, use `scripts/image_gen.py generate --out` for that exact path.
 - Show the sample image to the user.

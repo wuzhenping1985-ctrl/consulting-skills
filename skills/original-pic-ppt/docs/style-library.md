@@ -29,6 +29,8 @@ Inspect enough pages to capture the style system. Prefer at least one cover or o
 
 ## Extract The Style System
 
+Microsoft YaHei (微软雅黑) is fixed across the whole skill and is not a variable style attribute. When a source deck or image uses another font family, extract its typographic hierarchy through scale, weight, color, alignment, spacing, line length, and placement, then specify Microsoft YaHei as the sole font family. Do not save serif, handwritten, display, monospace, calligraphic, decorative, or generic fallback font-family requirements. Text already baked into a strict source image remains part of that image and does not need re-typesetting.
+
 Extract reusable visual rules:
 
 - `style_name`: short reusable name.
@@ -36,7 +38,7 @@ Extract reusable visual rules:
 - `visual_direction`: one concise description of the style identity.
 - `canvas`: aspect ratio, background, composition, density, whitespace.
 - `color_palette`: primary, secondary, accent, neutral colors, plus usage rules.
-- `typography`: title, body, labels, hierarchy, alignment, text quality rules.
+- `typography`: Microsoft YaHei for title, body, labels, annotations, captions, citations, chart/table text, Latin text, numbers, and punctuation; plus hierarchy, allowed regular/bold weights, alignment, spacing, and text quality rules.
 - `layout_patterns`: recurring page types and composition patterns.
 - `layout_usage_rule`: how to vary layouts while keeping the same identity.
 - `layout_blueprints`: 2-4 reusable composition blueprints, described semantically rather than copied from one slide.
@@ -100,9 +102,10 @@ Match the existing `references/*.md` structure:
         "rule": "..."
       },
       "typography": {
-        "title": "...",
-        "body": "...",
-        "labels": "...",
+        "font_family": "Microsoft YaHei (微软雅黑) only",
+        "title": "Microsoft YaHei bold; describe size, alignment, color, and hierarchy",
+        "body": "Microsoft YaHei regular; describe size, spacing, and alignment",
+        "labels": "Microsoft YaHei regular or bold; include annotations, captions, citations, chart/table text, Latin text, numbers, and punctuation",
         "text_quality": "..."
       },
       "layout_patterns": [
@@ -135,7 +138,7 @@ Match the existing `references/*.md` structure:
     }
     ```
 
-The JSON should be directly reusable as a slide generation style brief. Keep it descriptive enough for future agents, but avoid embedding task-specific content.
+The JSON should be directly reusable as a slide generation style brief. Keep it descriptive enough for future agents, but avoid embedding task-specific content. Add a rendering constraint that Microsoft YaHei is the only font family for generated text and that it overrides the typography visible in the source style reference.
 
 ## Make The Style Discoverable
 
